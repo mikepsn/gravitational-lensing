@@ -1,12 +1,100 @@
-\documentclass[a4paper]{article}
-\usepackage{graphicx}
-\usepackage{a4wide}
-\usepackage{moreverb}
-\usepackage{multicol}
+%----------------------------------------------------------------------
+% COMPUTATIONAL PHYSICS - PROJECT 5
+% GRAVITATIONAL LENSING BY POINT MASSES
+%----------------------------------------------------------------------
 
-\title{\Large{ \textsc{ 640-364 Computational Physics --- Project 5} } \\[3mm]
-       \bfseries{{\huge Gravitational Lensing by Point Masses}}}
-\author{Michael Papasimeon}
+\documentclass[a4paper]{IEEEtran} 
+\usepackage{amssymb}
+\usepackage{moreverb}
+\usepackage[cmex10]{amsmath} 
+\usepackage{cite} 
+\usepackage{graphicx} 
+\usepackage[colorlinks=false, hidelinks]{hyperref} 
+
+\usepackage{listings} 
+\usepackage{color} 
+\usepackage{xcolor}  
+\usepackage{microtype} 
+\usepackage{microtype} 
+\usepackage{inconsolata} 
+\usepackage[framemethod=TikZ]{mdframed} 
+\usepackage{alltt}
+\usepackage{sverb} 
+\usepackage{verbatim} 
+\usepackage{pifont} 
+\usepackage{alltt} 
+\usepackage{helvet} 
+
+%----------------------------------------------------------------------
+% CODE LISTING SETTINGS
+%----------------------------------------------------------------------
+
+\lstset{language=fortran,
+        %basicstyle=\footnotesize\ttfamily, 
+        basicstyle=\small\ttfamily,
+        columns=fullflexible, 
+        %title=\lstname, 
+        numbers=left, stringstyle=\texttt, 
+        numberstyle={\tiny\texttt}, 
+        keywordstyle=\color{blue}, 
+        commentstyle=\color{darkgreen}, 
+        stringstyle=\color{purple} } 
+
+
+\mdfsetup{skipabove=\topskip, skipbelow=\topskip} 
+
+\definecolor{codebg}{rgb}{0.99,0.99,0.99}
+
+\global\mdfdefinestyle{code}{%
+    frametitlerule=true,%
+    frametitlefont=\small\bfseries\ttfamily,%
+    frametitlebackgroundcolor=lightgray,%
+    backgroundcolor=codebg,%
+    linecolor=gray, linewidth=0.5pt,%
+    leftmargin=0.5cm, rightmargin=0.5cm,%
+    roundcorner=2pt,%
+    innerleftmargin=5pt
+}
+
+\global\mdfdefinestyle{code2}{%
+    topline=false,%
+    bottomline=false,%
+    leftline=true,%
+    rightline=false,%
+    backgroundcolor=codebg,%
+    linecolor=gray, linewidth=0.5pt,%
+    leftmargin=0.0cm, rightmargin=0.0cm,%
+    innerleftmargin=1pt
+}
+
+\newcommand{\showcode}[1]{\begin{mdframed}[style=code] %
+                            \lstinputlisting{#1}% 
+                          \end{mdframed}% 
+}
+
+\newcommand{\showsmallcode}[1]{\begin{mdframed}[style=code2] %
+        \lstinputlisting[basicstyle=\ttfamily\tiny]{#1}% 
+                          \end{mdframed}% 
+}
+
+
+
+
+%----------------------------------------------------------------------
+% IEEE SETTINGS
+%----------------------------------------------------------------------
+
+\interdisplaylinepenalty=2500
+\setlength{\IEEEilabelindent}{\IEEEilabelindentB}
+
+\markboth{Gravitational Lensing by Point Masses. Michael Papasimeon. 1997}{} 
+
+%----------------------------------------------------------------------
+% BEGIN DOCUMENT
+%----------------------------------------------------------------------
+
+\title{Gravitational Lensing by Point Masses} 
+\author{Michael Papasimeon\\29 October 1997}
 \date{October 29, 1997}
 
 \begin{document}
@@ -34,11 +122,14 @@ the object. The effect is known as gravitational lensing as the deflecting
 object acts very much like an optical lens, in that images of distant
 stellar objects can be magnified, distorted, focused and multiple
 images being created.
-\begin{center}
-        \includegraphics[width=7cm]{images/hubble.eps}
-        \\[1mm]
-        Figure 1: Gravitational Lens in Abbell 2218
-\end{center}
+
+\begin{figure}[h] 
+    \caption{Figure 1: Gravitational Lens in Abbell 2218} 
+    \label{fig:abbell} 
+    \begin{center}
+        \includegraphics[width=\columnwidth]{images/hubble.eps}
+    \end{center}
+\end{figure}
 
 The effect has been observed many times using both ground and spaced
 based telesopes at both optical and radio wavelengths. The lensing objects
@@ -75,7 +166,7 @@ where
     \item $\alpha = $ deflection angle
 \end{itemize}
 \begin{center}
-    \includegraphics[width=7cm]{images/gldiag.eps}
+    \includegraphics[width=\columnwidth]{images/gldiag.eps}
     \\[1mm]
     Figure 2 : Angular Deflection of a Photon
 \end{center}
@@ -111,7 +202,7 @@ effective distance $D$ and is defined as:
     D = \frac{D_{od} D_{ds} }{D_{os}}
 \end{equation}
 \begin{center}
-    \includegraphics[angle=-90,width=7cm]{images/setup.eps}
+    \includegraphics[angle=-90,width=\columnwidth]{images/setup.eps}
     \\[1mm]
     Figure 3: Setup for the lens equation
 \end{center}
@@ -274,7 +365,7 @@ solutions for the angular diameter distance $D$.
     \item $D_{III}$ \texttt{d3.dat} (The centre curve)
 \end{itemize}
 \begin{center}
-    \includegraphics{Results/cosmo_all.eps}
+    \includegraphics[width=\columnwidth]{results/cosmo_all.eps}
     \\[1mm]
     Plot of Angular Diameter Distance against Source Redshift
 \end{center}
@@ -314,7 +405,7 @@ as the light passing through a material of a different refractive index
 as in electrodynamics.
 
 \begin{center}
-    \includegraphics{Results/dim.eps}
+    \includegraphics[width=\columnwidth]{results/dim.eps}
     \\[1mm]
     Dimming Factor against Source Redshift
 \end{center}
@@ -608,21 +699,28 @@ mass.
     are needed to simulate this situation so that it we can accurate
     comparisons with observations.
 
-\appendix
-% Appendix A
-\newpage
-\section{\texttt{caustics.f}}
-\verbatimtabinput[6]{src/caustics.f}
+%----------------------------------------------------------------------
+% APPENDICES
+%----------------------------------------------------------------------
 
-% Appendix B
-\newpage
-\section{\texttt{lense.f}}
-\verbatimtabinput[4]{src/lense.f}
+\onecolumn
 
-% Appendix C
-\newpage
-\section{\texttt{image.c}}
-\verbatimtabinput[4]{src/image.c}
+\appendix[Code Listing: caustics.f]
+\showcode{src/caustics.f} 
+
+\newpage 
+\appendix[Code Listing: lense.f] 
+\showcode{src/lense.f} 
+
+%\newpage 
+%\appendix[Code Listing: image.c] 
+%\showcode{src/image.c}
+
+%----------------------------------------------------------------------
+% END DOCUMENT
+%----------------------------------------------------------------------
+
+
 
 \end{document}
     
