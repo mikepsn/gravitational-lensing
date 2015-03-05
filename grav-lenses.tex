@@ -29,7 +29,9 @@
 % CODE LISTING SETTINGS
 %----------------------------------------------------------------------
 
-\lstset{language=fortran,
+\definecolor{darkgreen}{rgb}{0.0, 0.5, 0.0}
+
+\lstset{language=C,
         %basicstyle=\footnotesize\ttfamily, 
         basicstyle=\small\ttfamily,
         columns=fullflexible, 
@@ -37,7 +39,7 @@
         numbers=left, stringstyle=\texttt, 
         numberstyle={\tiny\texttt}, 
         keywordstyle=\color{blue}, 
-        commentstyle=\color{darkgreen}, 
+        commentstyle=\color{darkgreen},
         stringstyle=\color{purple} } 
 
 
@@ -71,6 +73,12 @@
                             \lstinputlisting{#1}% 
                           \end{mdframed}% 
 }
+
+\newcommand{\showccode}[1]{\begin{mdframed}[style=code] %
+                            \lstinputlisting[language=C]{#1}% 
+                          \end{mdframed}% 
+}
+
 
 \newcommand{\showsmallcode}[1]{\begin{mdframed}[style=code2] %
         \lstinputlisting[basicstyle=\ttfamily\tiny]{#1}% 
@@ -750,13 +758,11 @@ mass.
 \appendix[Code Listing: caustics.f]
 \showcode{src/caustics.f} 
 
-\newpage 
 \appendix[Code Listing: lense.f] 
 \showcode{src/lense.f} 
 
-%\newpage 
-%\appendix[Code Listing: image.c] 
-%\showcode{src/image.c}
+\appendix[Code Listing: image.c] 
+\showccode{src/image.c}
 
 %----------------------------------------------------------------------
 % END DOCUMENT
