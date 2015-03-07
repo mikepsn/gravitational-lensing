@@ -11,6 +11,9 @@
 \usepackage{graphicx} 
 \usepackage[colorlinks=false, hidelinks]{hyperref} 
 
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
 \usepackage{listings} 
 \usepackage{color} 
 \usepackage{xcolor}  
@@ -462,20 +465,40 @@ a case $III$ universe.
     also takes the mass $M$ (in $kg$) of the lensing body, the effective
     distance D specified in equation~\ref{eq:effd}, and the $(x,y)$
     location of the lensing body.
+    The details of the lensing algorithm can be found in Algorith~\ref{alg:lense}.
 
-    The algorithm used was as follows:
-    \begin{verbatim}
-        load the image
-        calculate the Einstein radius
-        for all coordinates in the image
-           calculate the location of the lensing body 
-           calculate the impact radius beta
-           determine the correct angle for each quadrant
-           calculate the new angles for each point thetaPlus and thetaMinus
-           set the current coordinate to the new deflected coordinates
-        end for
-        output the image
-    \end{verbatim}
+    \begin{algorithm}
+        \caption{Lensing Algorithm} 
+        \label{alg:lense} 
+        \begin{algorithmic}[1]
+            \Procedure {Lense}{} 
+                \State $img \leftarrow \textbf{load\_image}()$
+                \State $x_c, y_c \leftarrow \textbf{find\_centre}(img)$
+                \State $\theta_E \leftarrow \textbf{calc\_einstein\_radius}()$
+                \For {$c \in img.coordinates$}
+                    \State $b_x, b_y \leftarrow \textbf{calc\_location\_lensing\_body}()$
+                    \State $\beta \leftarrow \textbf{impact\_radius}()$
+                    \State $\textbf{calc\_angle\_for\_each\_quadrant}()$
+                    \State $\theta_{\pm} \leftarrow \textbf{calc\_new\_angles}()$
+                    \State $c \leftarrow \textbf{calc\_new\_deflected\_coordinate}()$
+                \EndFor
+                \State $\textbf{save\_image(img)}$ 
+            \EndProcedure
+        \end{algorithmic} 
+    \end{algorithm} 
+
+%    \begin{verbatim}
+%        load the image
+%        calculate the Einstein radius
+%        for all coordinates in the image
+%           calculate the location of the lensing body 
+%           calculate the impact radius beta
+%           determine the correct angle for each quadrant
+%           calculate the new angles for each point thetaPlus and thetaMinus
+%           set the current coordinate to the new deflected coordinates
+%        end for
+%        output the image
+%    \end{verbatim}
 
     A number of different images were used in the simulation. Two were used
     for testing purposes and to observe the effect, and three were images
@@ -547,14 +570,14 @@ clearly shows both the images and large distortions.
 In many cases of actual observations, the images inside the Einstein radius
 are two small to be resolved by even the most powerful telescopes.
 
-\begin{figure}
-    \caption{Enterprise}
+\begin{figure}[ht]
+    \caption{Enterprise} 
     \label{fig:enterprise} 
     \begin{center}
         \begin{tabular}{ccc}
             \includegraphics[width=0.3\columnwidth]{pics/1701.eps} &
             \includegraphics[width=0.3\columnwidth]{pics/ent_2e30.eps} &
-            \includegraphics[width=0.3\columnwidth]{pics/ent_1e31.eps} \\
+            \includegraphics[width=0.3\columnwidth]{pics/ent_1e31.eps} 
         \end{tabular}
     \end{center}
 \end{figure}
