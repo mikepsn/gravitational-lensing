@@ -22,10 +22,11 @@
 \usepackage{algpseudocode}
 
 \usepackage{pifont} 
-
+\usepackage{helvet} 
 
 \usetheme{Madrid} 
 \useinnertheme{rectangles} 
+\setbeamertemplate{blocks}[default] 
 
 \setbeamertemplate{navigation symbols}{}
 %\setbeamerfont{block title}{size={}}
@@ -34,7 +35,7 @@
 %\definecolor{mypurple}{rgb}{.49,0,98}
 %\setbeamercolor*{palette primary}{use=structure,fg=white,bg=green}
 %\usecolortheme[rgb={0.9,0.2,0.2}]{structure}
-\usecolortheme[rgb={0.2,0.2,0.9}]{structure}
+\usecolortheme[rgb={0.2,0.3,0.6}]{structure}
 
 \title[Gravitational Lensing]{Gravitational Lensing by Point Masses} 
 \author{Michael Papasimeon} 
@@ -61,7 +62,7 @@
 
 \begin{frame}{Gravitational Lens in Abbell 2218} 
     \begin{center}
-        \includegraphics[width=0.8\textwidth]{images/hubble.eps}
+        \includegraphics[width=0.7\textwidth]{images/hubble.eps}
     \end{center}
 \end{frame} 
 
@@ -209,9 +210,6 @@ The corresponding lens equation for the Chang-Refsdal model is:
                 \end{array} 
               \right] \vec{x} - \frac{\vec{x}}{|\vec{x}|^2}
 \end{equation}
-\end{frame} 
-
-\begin{frame}{Chang-Refsdal Lens in Complex Notation}  
 This can also be written in the complex notation as 
 $z_s = z + \gamma \bar{z} - \frac{\epsilon}{\bar{z}}$, where
 \begin{itemize}
@@ -304,78 +302,81 @@ solutions for the angular diameter distance $D$.
     \end{center}
 \end{frame}
 
-According to the big bang model of the universe, objects with large
-redshifts are further away. Hence the results of solving the Dyer-Roeder
+\begin{frame}{Increasing Redshift} 
+\begin{itemize}
+\item According to the big bang model of the universe, objects with large
+redshifts are further away. 
+\item Hence the results of solving the Dyer-Roeder
 equation for the cases (1 and 3) when the ``clumpiness'' parameter 
 $\tilde{\alpha}$ is ignored the angular diameter distance $D$ increases
-as the redshift increases. In both cases we get asymptoting values:
+as the redshift increases. 
+\item In both cases we get asymptoting values:
+\end{itemize} 
 \begin{equation}
     \lim_{z \rightarrow \infty} D_{I}(z) = 0.5
 \end{equation}
 \begin{equation}
     \lim_{z \rightarrow \infty} D_{II}(z) = 0.4
 \end{equation}
-In both these cases where $\tilde{\alpha}$ is not in the equation, 
-the lens is the only matter along the line of sight to the source and
-hence we get an increase in the angular diameter distance as the redshift 
-increases. Of particular interest is that in case $I$ ($\Omega = 0$), 
-the value of $D$ increases more rapidly than in case $III$ ($\Omega = 1$).
-Hence we see that the density of the universe plays influences the results
-of any models chosen for gravitational lensing. Since the mean and 
-critical densities of the universe are unknown (especially since it is
-believed that most of the matter of the universe is dark matter), 
-there are limits to how accurately we can determined parameters from
-gravitational lensing observations.
+\end{frame} 
+%In both these cases where $\tilde{\alpha}$ is not in the equation, 
+%the lens is the only matter along the line of sight to the source and
+%hence we get an increase in the angular diameter distance as the redshift 
+%increases. Of particular interest is that in case $I$ ($\Omega = 0$), 
+%the value of $D$ increases more rapidly than in case $III$ ($\Omega = 1$).
+%Hence we see that the density of the universe plays influences the results
+%of any models chosen for gravitational lensing. Since the mean and 
+%critical densities of the universe are unknown (especially since it is
+%believed that most of the matter of the universe is dark matter), 
+%there are limits to how accurately we can determined parameters from
+%gravitational lensing observations.
 
-The second case is perhaps the most interesting of the three cosmologies
-in that we have a non-zero contribution from the ``clumpiness'' parameter
-$\tilde{\alpha}$. As a result is also produces the most interesting result
-as we have a maxiumum in $D$ at $z \simeq 1$. 
-In this case where $\tilde{\alpha} = 1$, the gravitational lense
-make only a minor contribution to the total amount of smoothly distributed
-matter in the line of sight of the observer and the source. In this situation
-the matter is smootly distributed and we get gravitational lens being
-the matter between source and observer. We can then think of this
-as the light passing through a material of a different refractive index
-as in electrodynamics.
+%The second case is perhaps the most interesting of the three cosmologies
+%in that we have a non-zero contribution from the ``clumpiness'' parameter
+%$\tilde{\alpha}$. As a result is also produces the most interesting result
+%as we have a maxiumum in $D$ at $z \simeq 1$. 
+%In this case where $\tilde{\alpha} = 1$, the gravitational lense
+%make only a minor contribution to the total amount of smoothly distributed
+%matter in the line of sight of the observer and the source. In this situation
+%the matter is smootly distributed and we get gravitational lens being
+%the matter between source and observer. We can then think of this
+%as the light passing through a material of a different refractive index
+%as in electrodynamics.
 
-\begin{figure}
-    \caption{Dimming factor against source redshift}
-    \label{fig:dimming}
+\begin{frame}{Dimming factor against source redshift}
     \begin{center}
-        \includegraphics[width=\columnwidth]{results/dim.eps}
+        \includegraphics[width=0.7\textwidth]{results/dim.eps}
     \end{center}
-\end{figure}
+\end{frame} 
 
-Figure~\ref{fig:dimming} shows the dimming factor $(D_{II}/D_{III})^2$ plotted
-against source redshift $z$. In case $II$ has a smoothly distributed
-matter distribution meaning that we see more and brigter images than
-in case $III$ where the ``clumpiness'' parameter results in less
-light reaching the observer. As a result, a case $III$ universe appears
-to be dimmer than a case $II$ universe. The dimming ratio of factor
-is $(D_{II}/D_{III})^2$ and is plotted against red shift in the plot above.
-As we can see in the plot the higher the redshift the more dimness in
-a case $III$ universe.
+%Figure~\ref{fig:dimming} shows the dimming factor $(D_{II}/D_{III})^2$ plotted
+%against source redshift $z$. In case $II$ has a smoothly distributed
+%matter distribution meaning that we see more and brigter images than
+%in case $III$ where the ``clumpiness'' parameter results in less
+%light reaching the observer. As a result, a case $III$ universe appears
+%to be dimmer than a case $II$ universe. The dimming ratio of factor
+%is $(D_{II}/D_{III})^2$ and is plotted against red shift in the plot above.
+%As we can see in the plot the higher the redshift the more dimness in
+%a case $III$ universe.
 
-\section{Lensing an Extended Source by a Point Mass}
-    \subsection{Method}
-    A program was written to simulate the gravitational lensing 
-    of a two dimensional grid. Two make the results of the simulation
-    more interesting the two dimensional grid chosen was represented
-    as a two dimensional array of integers ranging from 0 to 255.
-    The value at each array element represents an intensity value. As a result
-    the grid represents a two dimensional Portable Grey Map (PGM) image.
-    The program was written to accept the name of a PGM file on the command
-    line, load the image into memory,, apply the gravitational lensing calculations
-    and output a new ``lensed'' PGM image to standard output. The program
-    also takes the mass $M$ (in $kg$) of the lensing body, the effective
-    distance D specified in equation~\ref{eq:effd}, and the $(x,y)$
-    location of the lensing body.
-    The details of the lensing algorithm can be found in Algorithm~\ref{alg:lense}.
+%\section{Lensing an Extended Source by a Point Mass}
+%    \subsection{Method}
+%    A program was written to simulate the gravitational lensing 
+%    of a two dimensional grid. Two make the results of the simulation
+%    more interesting the two dimensional grid chosen was represented
+%    as a two dimensional array of integers ranging from 0 to 255.
+%    The value at each array element represents an intensity value. As a result
+%    the grid represents a two dimensional Portable Grey Map (PGM) image.
+%    The program was written to accept the name of a PGM file on the command
+%    line, load the image into memory,, apply the gravitational lensing calculations
+%    and output a new ``lensed'' PGM image to standard output. The program
+%    also takes the mass $M$ (in $kg$) of the lensing body, the effective
+%    distance D specified in equation~\ref{eq:effd}, and the $(x,y)$
+%    location of the lensing body.
+%    The details of the lensing algorithm can be found in Algorithm~\ref{alg:lense}.
 
-    \begin{algorithm}
-        \caption{Lensing Algorithm} 
-        \label{alg:lense} 
+\begin{frame}{Lensing an Extended Source by a Point Mass} 
+        \begin{block}{Lensing Algorithm} 
         \begin{algorithmic}[1]
             \Procedure {Lense}{} 
                 \State $img \leftarrow \textbf{load\_image}()$
@@ -391,7 +392,8 @@ a case $III$ universe.
                 \State $\textbf{save\_image(img)}$ 
             \EndProcedure
         \end{algorithmic} 
-    \end{algorithm} 
+        \end{block} 
+\end{frame} 
 
 %    \begin{verbatim}
 %        load the image
@@ -406,6 +408,7 @@ a case $III$ universe.
 %        output the image
 %    \end{verbatim}
 
+\begin{frame}{Lensing Images}
     A number of different images were used in the simulation. Two were used
     for testing purposes and to observe the effect, and three were images
     of astronomical interest. The images used include:
@@ -417,17 +420,17 @@ a case $III$ universe.
         \item The Pleiades Star Cluster
     \end{itemize}
 
-    The program used for the simulation called \texttt{image.c} can
-    be found in Appendix C. The programming language used in this case
-    was C instead of FORTRAN, for the following reasons:
-    \begin{itemize}
-        \item Using a C \texttt{struct} was appropriate in representing
-              the data stored in a single PGM image.
-        \item Image files of varying widths and heights were used, and 
-              therefore the program made used of dynamic memory allocation
-              to allocate only the memory that was required to store
-              the images.
-    \end{itemize}
+    %The program used for the simulation called \texttt{image.c} can
+    %be found in Appendix C. The programming language used in this case
+    %was C instead of FORTRAN, for the following reasons:
+    %\begin{itemize}
+    %    \item Using a C \texttt{struct} was appropriate in representing
+    %          the data stored in a single PGM image.
+    %    \item Image files of varying widths and heights were used, and 
+    %          therefore the program made used of dynamic memory allocation
+    %          to allocate only the memory that was required to store
+    %          the images.
+    %\end{itemize}
 
     In all cases the distance ratio used was $D = 1$ and just the mass
     was varied. This is because when calculating the Einstein radius,
@@ -435,132 +438,121 @@ a case $III$ universe.
     \begin{equation}
         \theta_E = \sqrt{\frac{4GMD}{c^2}}
     \end{equation}
+\end{frame} 
 
-\subsection{Results and Discussion}
+%\subsection{Results and Discussion}
 
-\subsubsection{A Human Face}
-An image of a face was used to first test the program. 
-The original image and the simulated lensing of the face is shown
-in Figure~\ref{fig:face}.  The image on the
-left is the original, and the image on the right is one that has been
-gravitationally lensed by a point mass in the lower right hand corner
-of mass, $M = 5 \times 10^{30}$ kg.
+%\subsubsection{A Human Face}
+%An image of a face was used to first test the program. 
+%The original image and the simulated lensing of the face is shown
+%in Figure~\ref{fig:face}.  The image on the
+%left is the original, and the image on the right is one that has been
+%gravitationally lensed by a point mass in the lower right hand corner
+%of mass, $M = 5 \times 10^{30}$ kg.
 
-\begin{figure}
-    \caption{Gravitational lensing of image of a human face by a mass $M = 5 \times 10^{30}$ kg} 
-    \label{fig:face} 
+\begin{frame}{Gravitational lensing of image of a human face by a mass $M = 5 \times 10^{30}$ kg} 
     \begin{center}
     \begin{tabular}{cc}
-        \includegraphics[width=0.4\columnwidth]{pics/kr.eps} &
-        \includegraphics[width=0.4\columnwidth]{pics/kr_5e30.eps} \\
+        \includegraphics[width=0.3\textwidth]{pics/kr.eps} &
+        \includegraphics[width=0.3\textwidth]{pics/kr_5e30.eps} \\
     \end{tabular}
     \end{center}
-\end{figure} 
+\end{frame} 
 
-Apart from the obvious distortion in the lensed image, of particular
-interest is the formation of two images, one small and one large.
-The smaller image is inside the Einstein radius of the lense.
+%Apart from the obvious distortion in the lensed image, of particular
+%interest is the formation of two images, one small and one large.
+%The smaller image is inside the Einstein radius of the lense.
 
-\subsubsection{The Enterprise}
-Figure~\ref{fig:enterprise} shows three images of the starship Enterprise
-from Star Trek. 
-\begin{itemize}
-    \item The image on the left is the original
-    \item The center image has a gravitational lense of mass
-          $M = 2 \times 10^{30}$ kg with the lense placed in the 
-          centre.
-    \item The image on the right has a gravitational lense of
-          mass $M = 1 \times 10^{31}$ in the lower right hand corner.
-\end{itemize}
+%\subsubsection{The Enterprise}
+%Figure~\ref{fig:enterprise} shows three images of the starship Enterprise
+%from Star Trek. 
+%\begin{itemize}
+%    \item The image on the left is the original
+%    \item The center image has a gravitational lense of mass
+%          $M = 2 \times 10^{30}$ kg with the lense placed in the 
+%          centre.
+%    \item The image on the right has a gravitational lense of
+%          mass $M = 1 \times 10^{31}$ in the lower right hand corner.
+%\end{itemize}
 
-With the lense in the center of the image it is more difficult to 
-see the two images. The image on the right resulting from a larger
-mass (and with the lens in the bottom right hand corner)
-clearly shows both the images and large distortions.
-In many cases of actual observations, the images inside the Einstein radius
-are two small to be resolved by even the most powerful telescopes.
+%With the lense in the center of the image it is more difficult to 
+%see the two images. The image on the right resulting from a larger
+%mass (and with the lens in the bottom right hand corner)
+%clearly shows both the images and large distortions.
+%In many cases of actual observations, the images inside the Einstein radius
+%are two small to be resolved by even the most powerful telescopes.
 
-\begin{figure}
-    \caption{Gravitational lensing of an image of the starship Enterprise} 
-    \label{fig:enterprise} 
+\begin{frame}{Gravitational lensing of an image of the starship Enterprise} 
     \begin{center}
         \begin{tabular}{ccc}
-            \includegraphics[width=0.6\columnwidth]{pics/1701.eps} &
-            \includegraphics[width=0.6\columnwidth]{pics/ent_2e30.eps} &
-            \includegraphics[width=0.6\columnwidth]{pics/ent_1e31.eps} 
+            \includegraphics[width=0.3\textwidth]{pics/1701.eps} &
+            \includegraphics[width=0.3\textwidth]{pics/ent_2e30.eps} &
+            \includegraphics[width=0.3\textwidth]{pics/ent_1e31.eps} 
         \end{tabular}
     \end{center}
-\end{figure}
+\end{frame} 
 
-\subsubsection{The Andromeda Galaxy}     
-Figure~\ref{fig:andromeda} shows the effect of different masses gravitational lensing
-an image of the Andromeda galaxy.  A number different lenses
-of varying masses were used. In all the cases the lensing object
-is located in the upper left hand corner of the image [position $(0,0)$].
+%\subsubsection{The Andromeda Galaxy}     
+%%Figure~\ref{fig:andromeda} shows the effect of different masses gravitational lensing
+%an image of the Andromeda galaxy.  A number different lenses
+%of varying masses were used. In all the cases the lensing object
+%is located in the upper left hand corner of the image [position $(0,0)$].
 
-\begin{figure}
-    \caption{Gravitational Lensing of the Andromeda Galaxy} 
-    \label{fig:andromeda} 
+\begin{frame}{Gravitational Lensing of the Andromeda Galaxy} 
 \begin{center}
     \begin{tabular}{cc} 
-    \includegraphics[width=0.4\textwidth]{pics/andromeda.eps}  &
-    \includegraphics[width=0.4\textwidth]{pics/1e30and.eps}  \\
+    \includegraphics[width=0.3\textwidth]{pics/andromeda.eps}  &
+    \includegraphics[width=0.3\textwidth]{pics/1e30and.eps}  \\
     $M = 0 kg$ & $M = 1 \times 10^{30}$ kg, $D = 1$ \\ 
-    \includegraphics[width=0.4\textwidth]{pics/1e31and.eps}  &
-    \includegraphics[width=0.4\textwidth]{pics/4e31and.eps} \\
+    \includegraphics[width=0.3\textwidth]{pics/1e31and.eps}  &
+    \includegraphics[width=0.3\textwidth]{pics/4e31and.eps} \\
     $M = 1 \times 10^{31}$ kg, $D = 1$ &  $M = 4 \times 10^{31}$ kg, $D = 1$ \\ 
     \end{tabular} 
 \end{center}
-\end{figure}
+\end{frame}
 
-As the mass of the lense is increased, the amount of distortion in the
-resulting image is increased. The secondary image is also clearly visible.
+%As the mass of the lense is increased, the amount of distortion in the
+%resulting image is increased. The secondary image is also clearly visible.
 
-\subsubsection{The Milky Way}
-Figure~\ref{fig:milky-way} shows the effect of simulated gravitational lensing
-on an image of the centre of the Milky Way galaxy. 
-The image on left is looking towards the centre of the Milky Way in the
-infrared. The image on the right is gravitationally lensed by a 
-$M = 3 \times 10^{30}$ kg mass. The lense is located slightly left and above
-from the center. This image of the Milky Way allows us to see the distortion
-of the image within the Einstein radius much easier.
+%\subsubsection{The Milky Way}
+%Figure~\ref{fig:milky-way} shows the effect of simulated gravitational lensing
+%on an image of the centre of the Milky Way galaxy. 
+%The image on left is looking towards the centre of the Milky Way in the
+%infrared. The image on the right is gravitationally lensed by a 
+%$M = 3 \times 10^{30}$ kg mass. The lense is located slightly left and above
+%from the center. This image of the Milky Way allows us to see the distortion
+%of the image within the Einstein radius much easier.
 
-\begin{figure}
-    \caption{Gravitational Lensing of the Milky Way} 
-    \label{fig:milky-way} 
+\begin{frame}{Gravitational Lensing of the Milky Way} 
     \begin{center}
-        \begin{tabular}{cc}
-            \includegraphics[width=0.45\textwidth]{Pics/milky.eps} &
+            \includegraphics[width=0.45\textwidth]{Pics/milky.eps} \hspace{1mm} 
             \includegraphics[width=0.45\textwidth]{Pics/milky3e30.eps} 
-        \end{tabular}
     \end{center}
-\end{figure}
+\end{frame} 
 
-\subsubsection{The Pleiades Star Cluster}
-Figure~\ref{fig:pleiades} shows the effect of simulated gravitational lensing
-on a star cluster. 
-The image on the left is that of the Pleiades star cluster. The image
-on the right is gravitationally lensed by a $M = 2 \times 10^{30}$ kg
-mass.
+%\subsubsection{The Pleiades Star Cluster}
+%Figure~\ref{fig:pleiades} shows the effect of simulated gravitational lensing
+%on a star cluster. 
+%The image on the left is that of the Pleiades star cluster. The image
+%on the right is gravitationally lensed by a $M = 2 \times 10^{30}$ kg
+%mass.
 
-\begin{figure}
-    \caption{Gravitational Lensing of the Pleiades Star Cluster} 
-    \label{fig:pleiades} 
+\begin{frame}{Gravitational Lensing of the Pleiades Star Cluster} 
     \begin{center}
-        \begin{tabular}{cc}
-            \includegraphics[width=0.45\textwidth]{Pics/pl.eps} &
+            \includegraphics[width=0.45\textwidth]{Pics/pl.eps} \hspace{1mm} 
             \includegraphics[width=0.45\textwidth]{Pics/pl2e30.eps} 
-        \end{tabular}
     \end{center}
-\end{figure}
+\end{frame} 
 
-\section{Caustics for the Chang-Refsdal Lens}
-    \subsection{Method}
-    A FORTRAN program was written (see Appendix A -- \texttt{caustics.f})
-    which calculated critical curves and caustics for given
-    values of $\gamma$ and $\epsilon$. As stated earlier, critical
-    curves are obtained when Jacobian determinant is zero ($\det A = 0$)
-    This gives:
+%\section{Caustics for the Chang-Refsdal Lens}
+%    \subsection{Method}
+%    A FORTRAN program was written (see Appendix A -- \texttt{caustics.f})
+%    which calculated critical curves and caustics for given
+%    values of $\gamma$ and $\epsilon$. As stated earlier, critical
+%    curves are obtained when Jacobian determinant is zero ($\det A = 0$)
+%    This gives:
+
+\begin{frame}{Caustics for the Chang-Refsdal Lens} 
     \begin{equation}
         \det A = 1 - \left( \gamma + \frac{\epsilon}{\bar{z}^2} \right)
                      \left( \gamma + \frac{\epsilon}{\bar{z}^2} \right) = 0
@@ -578,6 +570,9 @@ mass.
     \begin{equation}
         u^2(1 - \gamma^2) - 2\gamma \epsilon \lambda u - 1 = 0.
     \end{equation}
+\end{frame} 
+
+\begin{frame}{Caustics for the Change-Refsdal Lens (continued)} 
     Solving this quadratic we obtain:
     \begin{equation}
         u = \frac{\gamma\epsilon\lambda \pm \sqrt{\gamma^2(\lambda^2 - 1) + 1}}
@@ -595,7 +590,9 @@ mass.
        y_2 = \left[ (1 - \gamma)x - \frac{\epsilon}{x} \right] 
                      \sqrt{\frac{1 - \lambda}{2} }
     \end{equation}
+\end{frame} 
 
+\begin{frame}{Selecting Values for $\epsilon$ and $\gamma$} 
     In the program a value of $\epsilon = 0.5$ was chosen. Values
     of gamma were chosen for the four representative regions in which
     caustics are found. The four regions are:
@@ -612,87 +609,72 @@ mass.
         \item $\gamma = +0.8$
         \item $\gamma = +1.6$
     \end{itemize}
+\end{frame} 
 
-    \subsection{Results}
-    The generated critical curves and caustics for the different values of $\gamma$ selected 
-    are shown in the following figures:
-    \begin{itemize}
-        \item $\gamma = -1.3$ Figure~\ref{fig:critical-gamma-1-3} 
-        \item $\gamma = -0.4$ Figure~\ref{fig:critical-gamma-0-4}
-        \item $\gamma = +0.8$ Figure~\ref{fig:critical-gamma08} 
-        \item $\gamma = +1.6$ Figure~\ref{fig:critical-gamma1-6}
-    \end{itemize} 
+%    \subsection{Results}
+%    The generated critical curves and caustics for the different values of $\gamma$ selected 
+%    are shown in the following figures:
+%    \begin{itemize}
+%        \item $\gamma = -1.3$ Figure~\ref{fig:critical-gamma-1-3} 
+%        \item $\gamma = -0.4$ Figure~\ref{fig:critical-gamma-0-4}
+%        \item $\gamma = +0.8$ Figure~\ref{fig:critical-gamma08} 
+%        \item $\gamma = +1.6$ Figure~\ref{fig:critical-gamma1-6}
+%    \end{itemize} 
    
-    \begin{figure}
-        \caption{Critical curves and caustics for $\gamma = -1.3$}
-        \label{fig:critical-gamma-1-3} 
+    \begin{frame}{Critical curves and caustics for $\gamma = -1.3$}
         \begin{center}
-            \begin{tabular}{cc}
-                \includegraphics[width=\columnwidth]{images/neg1-3-critical.eps}  &
-                \includegraphics[width=\columnwidth]{images/neg1-3-caustic.eps} 
-            \end{tabular} 
+                \includegraphics[width=0.5\textwidth]{images/neg1-3-critical.eps}  
+                \includegraphics[width=0.5\textwidth]{images/neg1-3-caustic.eps} 
         \end{center}
-    \end{figure}
+    \end{frame} 
 
-    \begin{figure}
-        \caption{Critical curves and caustics for $\gamma = -0.4$}
-        \label{fig:critical-gamma-0-4}   
+    \begin{frame}{Critical curves and caustics for $\gamma = -0.4$}
         \begin{center}
-            \begin{tabular}{cc} 
-                \includegraphics[width=\columnwidth]{images/neg0-4-critical.eps} &
-                \includegraphics[width=\columnwidth]{images/neg0-4-caustic.eps} 
-            \end{tabular} 
+                \includegraphics[width=0.5\textwidth]{images/neg0-4-critical.eps} 
+                \includegraphics[width=0.5\textwidth]{images/neg0-4-caustic.eps} 
         \end{center}
-    \end{figure} 
+    \end{frame} 
 
-    \begin{figure}
-        \caption{Critical curves and caustics for $\gamma = 0.8$}
-        \label{fig:critical-gamma08}
+    \begin{frame}{Critical curves and caustics for $\gamma = 0.8$}
         \begin{center}
-            \begin{tabular}{cc}
-                \includegraphics[width=\columnwidth]{images/pos0-8-critical.eps} &
-                \includegraphics[width=\columnwidth]{images/pos0-8-caustic.eps} 
-            \end{tabular} 
+                \includegraphics[width=0.5\textwidth]{images/pos0-8-critical.eps} 
+                \includegraphics[width=0.5\textwidth]{images/pos0-8-caustic.eps} 
         \end{center}
-    \end{figure}
+    \end{frame} 
 
-    \begin{figure} 
-        \caption{Critical curves and caustics for $\gamma = 1.6$} 
-        \label{fig:critical-gamma1-6} 
+    \begin{frame}{Critical curves and caustics for $\gamma = 1.6$} 
         \begin{center}
-            \includegraphics[width=\columnwidth]{images/pos1-6-critical.eps} 
-            \includegraphics[width=\columnwidth]{images/pos1-6-caustic.eps} 
+            \includegraphics[width=0.5\textwidth]{images/pos1-6-critical.eps} 
+            \includegraphics[width=0.5\textwidth]{images/pos1-6-caustic.eps} 
         \end{center}
-    \end{figure}
+    \end{frame} 
 
-    \subsection{Discussion}
-    As can be seen from the diagrams in the previouse section, 
-    the caustic curves with values of $\gamma$ ranging between
-    $-1$ and $1$ are non overlapping curves, whereas the others
-    overlap in a ``petal'' pattern.
+%    \subsection{Discussion}
+%    As can be seen from the diagrams in the previouse section, 
+%    the caustic curves with values of $\gamma$ ranging between
+%    $-1$ and $1$ are non overlapping curves, whereas the others
+%    overlap in a ``petal'' pattern.
 
-    The caustics can be used to determine light curves for background
-    sources since they mark where intensity increases in the resulting
-    gravitationally lensed image occur.
+%    The caustics can be used to determine light curves for background
+%    sources since they mark where intensity increases in the resulting
+%    gravitationally lensed image occur.
 
-    \begin{figure}
-        \caption{Gravitational Lensing by a Binary Star System}
-        \label{fig:binary-star} 
+    \begin{frame}{Gravitational Lensing by a Binary Star System}
         \begin{center}
-            \includegraphics[width=\columnwidth]{images/lens_model.eps}
+            \includegraphics[width=0.7\textwidth]{images/lens_model.eps}
         \end{center}
-    \end{figure}
+    \end{frame} 
 
-    The use of critical lines and caustics are even more important
-    when modelling graviational lenses especially when both the source
-    and the lens are more complicated objects such as galaxies.
-    For example Figure~\ref{fig:binary-star} shows the representation of 
-    gravitational lensing for a distant star by a binary star system.
-    As can be seen from the diagram, a simple point mass model is
-    not sufficient to handle a system such as this, and hence
-    more detailed models such as the Chang-Refsdal lens model
-    are needed to simulate this situation so that it we can accurate
-    comparisons with observations.
+%    The use of critical lines and caustics are even more important
+%    when modelling graviational lenses especially when both the source
+%    and the lens are more complicated objects such as galaxies.
+%    For example Figure~\ref{fig:binary-star} shows the representation of 
+%    gravitational lensing for a distant star by a binary star system.
+%    As can be seen from the diagram, a simple point mass model is
+%    not sufficient to handle a system such as this, and hence
+%    more detailed models such as the Chang-Refsdal lens model
+%    are needed to simulate this situation so that it we can accurate
+%    comparisons with observations.
 
 %----------------------------------------------------------------------
 % END DOCUMENT
